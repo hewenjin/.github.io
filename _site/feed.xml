@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-10-05T16:36:22+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">hewenjin</title><subtitle>知乎主页: https://www.zhihu.com/people/he-wen-jin-27</subtitle><entry><title type="html">解放你的左手小指-最适合vimer和程序员的改键方案</title><link href="http://localhost:4000/jekyll/update/2021/10/05/%E8%A7%A3%E6%94%BE%E4%BD%A0%E7%9A%84%E5%B7%A6%E6%89%8B%E5%B0%8F%E6%8C%87-%E6%9C%80%E9%80%82%E5%90%88vimer%E5%92%8C%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E6%94%B9%E9%94%AE%E6%96%B9%E6%A1%88.html" rel="alternate" type="text/html" title="解放你的左手小指-最适合vimer和程序员的改键方案" /><published>2021-10-05T16:18:02+08:00</published><updated>2021-10-05T16:18:02+08:00</updated><id>http://localhost:4000/jekyll/update/2021/10/05/%E8%A7%A3%E6%94%BE%E4%BD%A0%E7%9A%84%E5%B7%A6%E6%89%8B%E5%B0%8F%E6%8C%87-%E6%9C%80%E9%80%82%E5%90%88vimer%E5%92%8C%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E6%94%B9%E9%94%AE%E6%96%B9%E6%A1%88</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2021/10/05/%E8%A7%A3%E6%94%BE%E4%BD%A0%E7%9A%84%E5%B7%A6%E6%89%8B%E5%B0%8F%E6%8C%87-%E6%9C%80%E9%80%82%E5%90%88vimer%E5%92%8C%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E6%94%B9%E9%94%AE%E6%96%B9%E6%A1%88.html">&lt;p&gt;程序员用的最多的键想必是ctrl CV了:), 我从网瘾少年到打工人的过程中, 对计算机的了解在不断加深, 对这几个键的依赖却一直没有减少, 接触vim后, 还一直在探索最佳的返回normal模式方案.&lt;br /&gt;
+而如今我已经找到且用了很久了, 趁着重装系统特此分享一波&lt;/p&gt;
+
+&lt;p&gt;打游戏以及刚开始编程的那些时间, 因为ctrl键奇葩的位置导致要用到的时候左手总是要扭到一个及其别扭的位置, 心中不爽却无奈, 但没有多想应该怎么解决, 直到开始系统学习vim之后才花时间去了解, 在那之前, 不改键的情况下返回normal模式的几种方案我也基本都尝试过:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ctrl + [&lt;/code&gt; 需要两只手配合, 不够简练&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ctrl + c&lt;/code&gt; 大概一年的时间都在使用, 但是语义是发送SIGINT, 少数情况下可能会导致预期意外的结果, 不完美&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;esc&lt;/code&gt; 直接使用距离太远&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;最后捣鼓Arch的时候发现了这个宝藏仓库, 效果是将capslock改键, 单独按是esc, 组合键按是ctrl:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://gitlab.com/interception/linux/plugins/caps2esc&quot;&gt;https://gitlab.com/interception/linux/plugins/caps2esc&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;里面的这张古董键盘的图片也让我恍然大悟为什么ctrl这个常用的键会在那么奇葩的位置:
+&lt;img src=&quot;https://pic3.zhimg.com/80/8f28311a26dcccca7323237fea9e532c_1440w.jpeg&quot; alt=&quot;caps2esc&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;也就是说capslock这个键就是万恶之源, 所以要么改键要么把这个键扣掉吧:)&lt;/p&gt;
+
+&lt;p&gt;了解了一下很多年前就有类似的解决方案, 但很多不可用了, 这个caps2esc也有些bug, 有时需要ctrl加鼠标的组合, 并不支持这个操作, 但是interception tools这个仓库另外一个插件完美解决了这个问题:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://gitlab.com/interception/linux/plugins/dual-function-keys&quot;&gt;https://gitlab.com/interception/linux/plugins/dual-function-keys&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;接下来记录我配置的过程&lt;/p&gt;
+
+&lt;p&gt;Arch Linux直接AUR安装:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;yay -S interception-dual-function-keys&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;其他发行版参考仓库地址编译安装&lt;/p&gt;
+
+&lt;p&gt;安装后, 只需简单几个配置:&lt;/p&gt;
+
+&lt;p&gt;编辑改键配置的yaml文件, 我放在&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/etc/interception/capslock2ctrlesc.yaml&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;TIMING:
+    TAP_MILLISEC: 200 # 单击时长判定
+    DOUBLE_TAP_MILLISEC: 150 # 可选配置
+
+MAPPINGS:
+    - KEY: KEY_CAPSLOCK
+      TAP: KEY_ESC
+      HOLD: KEY_LEFTCTRL
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;然后是任务配置yaml, 文件位置固定在&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/etc/interception/udevmon.d/dual-function-keys.yaml&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- JOB: &quot;intercept -g $DEVNODE | dual-function-keys -c /etc/interception/capslock2ctrlesc.yaml | uinput -d $DEVNODE&quot;
+  DEVICE:
+    NAME: &quot;AT Translated Set 2 keyboard&quot; # 任务作用的设备
+- JOB: &quot;intercept -g $DEVNODE | dual-function-keys -c /etc/interception/capslock2ctrlesc.yaml | uinput -d $DEVNODE&quot;
+  DEVICE:
+    NAME: &quot;FILCO Bluetooth Keyboard&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;如果你想把改键配置放在其他路径, 记得修改上面配置相同的路径&lt;br /&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;NAME&lt;/code&gt;参数的设备名称通过这个命令确定&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sudo uinput -p -d /dev/input/by-id/X&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;X&lt;/code&gt;是路径下类似keyboard名称的设备, 如果这个路径下没有, 则需要在&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/dev/input&lt;/code&gt;目录下慢慢找了&lt;/p&gt;
+
+&lt;p&gt;配置写好后启动进程即可&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ systemctl enable --now udevmon.service
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;至此大功告成, capslock点击是esc, 长按是ctrl, 因为是以systemctl的方式启动, 也不会像kde之类桌面环境自带的改键一样在TTY下不生效&lt;/p&gt;
+
+&lt;p&gt;另外windows下也有类似的解决方案, 用一个AHK脚本即可:
+&lt;a href=&quot;https://gist.github.com/sedm0784/4443120&quot;&gt;CapsLockCtrlEscape.ahk&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;vim用户用这套改键方案是最爽的, 当然一开始可能有点不喜欢, 稍微适应一下就可以了, 本人大概一两天就习惯了停不下来:)&lt;/p&gt;</content><author><name></name></author><category term="jekyll" /><category term="update" /><summary type="html">程序员用的最多的键想必是ctrl CV了:), 我从网瘾少年到打工人的过程中, 对计算机的了解在不断加深, 对这几个键的依赖却一直没有减少, 接触vim后, 还一直在探索最佳的返回normal模式方案. 而如今我已经找到且用了很久了, 趁着重装系统特此分享一波</summary></entry><entry><title type="html">Arch下的KVM-win10客户机与宿主机使用samba共享文件的步骤.md</title><link href="http://localhost:4000/jekyll/update/2021/10/05/Arch%E4%B8%8B%E7%9A%84KVM-win10%E5%AE%A2%E6%88%B7%E6%9C%BA%E4%B8%8E%E5%AE%BF%E4%B8%BB%E6%9C%BA%E4%BD%BF%E7%94%A8samba%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E7%9A%84%E6%AD%A5%E9%AA%A4.html" rel="alternate" type="text/html" title="Arch下的KVM-win10客户机与宿主机使用samba共享文件的步骤.md" /><published>2021-10-05T16:18:01+08:00</published><updated>2021-10-05T16:18:01+08:00</updated><id>http://localhost:4000/jekyll/update/2021/10/05/Arch%E4%B8%8B%E7%9A%84KVM-win10%E5%AE%A2%E6%88%B7%E6%9C%BA%E4%B8%8E%E5%AE%BF%E4%B8%BB%E6%9C%BA%E4%BD%BF%E7%94%A8samba%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E7%9A%84%E6%AD%A5%E9%AA%A4</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2021/10/05/Arch%E4%B8%8B%E7%9A%84KVM-win10%E5%AE%A2%E6%88%B7%E6%9C%BA%E4%B8%8E%E5%AE%BF%E4%B8%BB%E6%9C%BA%E4%BD%BF%E7%94%A8samba%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E7%9A%84%E6%AD%A5%E9%AA%A4.html">&lt;p&gt;&lt;strong&gt;背景&lt;/strong&gt;：Arch Linux下的各种国产必备软件（微信，qq，再加上打工人需要的钉钉，企业微信之流）确实都有大佬打包的deepin-wine版本去用，无奈工作时需要使用的一些功能，语音会议，屏幕共享等要么还是不稳定，要么直接不能用，影响到了办公，所以决定还是用KVM做个win10虚拟机去使用这些软件了，使用过程中宿主机与客户机的剪切板共享可以传输字符，屏幕截图，却传输不了文件。稍微了解了一下用samba共享文件是最通用的解决方案了，这里记录一下配置过程。&lt;/p&gt;
+
+&lt;p&gt;参考&lt;a href=&quot;https://wiki.archlinux.org/title/Samba_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)&quot;&gt;Arch Wiki 上的Samba配置说明&lt;/a&gt;：&lt;/p&gt;
+
+&lt;p&gt;安装samba：&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;yay -S samba&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;创建配置文件，我用nvim将&lt;a href=&quot;https://git.samba.org/samba.git/?p=samba.git;a=blob_plain;f=examples/smb.conf.default;hb=HEAD&quot;&gt;默认配置&lt;/a&gt;写到这个路径：&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;nvim /etc/samba/smb.conf&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;创建samba 日志文件夹：&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mkdir -p /usr/local/samba/var/&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;添加samba 访问用户并设置密码，smb_user为你自己设置的用户名：&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;smbpasswd -a smb_user&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;smb.conf&lt;/code&gt;中配置你想要共享的文件夹，我将用户目录共享出去了：&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[homes] # 文件夹名称
+   comment = Home Directories # 注释
+   path = /home/smb_user/ # 共享的路径
+   browseable = yes # 是否显示文件夹
+   writable = no # 是否可写
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;之后启动服务：&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$ systemctl enable --now smb.service nmb.service&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;win10客户机下点网络，输入宿主机的ip即可访问（这里是最坑的地方，默认不会在网络里显示），第一次访问输入上面设置的用户名和密码即可：
+&lt;img src=&quot;https://pic3.zhimg.com/80/v2-d8ccbf288cede67e3760ad59c7c315e5_1440w.png&quot; alt=&quot;共享文件夹&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;之后使用就跟win10下的共享文件夹一样了，最后日常吐槽一下国内软件垃圾的linux生态:)&lt;/p&gt;</content><author><name></name></author><category term="jekyll" /><category term="update" /><summary type="html">背景：Arch Linux下的各种国产必备软件（微信，qq，再加上打工人需要的钉钉，企业微信之流）确实都有大佬打包的deepin-wine版本去用，无奈工作时需要使用的一些功能，语音会议，屏幕共享等要么还是不稳定，要么直接不能用，影响到了办公，所以决定还是用KVM做个win10虚拟机去使用这些软件了，使用过程中宿主机与客户机的剪切板共享可以传输字符，屏幕截图，却传输不了文件。稍微了解了一下用samba共享文件是最通用的解决方案了，这里记录一下配置过程。</summary></entry><entry><title type="html">neovim 0.5 配置记录.md</title><link href="http://localhost:4000/jekyll/update/2021/10/05/neovim-0.5-%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95.html" rel="alternate" type="text/html" title="neovim 0.5 配置记录.md" /><published>2021-10-05T16:18:00+08:00</published><updated>2021-10-05T16:18:00+08:00</updated><id>http://localhost:4000/jekyll/update/2021/10/05/neovim-0.5-%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2021/10/05/neovim-0.5-%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95.html">&lt;p&gt;neovim 0.5 于7月2日发布，正式带来treesitter和LSP client的支持，我也在第一时间升级到了 0.5，我的neovim/vim配置之前在Arch的环境下一直用的.vimrc，两者的配置混在一起，而 neovim 0.5 带来的新特性和新插件已经完全不能和vim兼容了，想要尝试新特性的同学，是时候把neovim和vim的配置完全分离开了。&lt;/p&gt;
+
+&lt;p&gt;写 neovim 的配置免不了使用一些lua，到今天花了一个半周末的时间，把有必要用lua重写的全都重写了，特别记录一下&lt;/p&gt;
+
+&lt;p&gt;先贴上个人仓库：&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/HeWenJin/config&quot;&gt;https://github.com/HeWenJin/config&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;dotfiles目录有老版的vimrc配置，其实也不算老，这一版的代码自动完成基于&lt;a href=&quot;https://github.com/neoclide/coc.nvim&quot;&gt;coc.nvim&lt;/a&gt;，现阶段比neovim内置的LSP更好用，还有基于&lt;a href=&quot;https://github.com/ohmyzsh/ohmyzsh&quot;&gt;oh-my-zsh&lt;/a&gt;的zshrc和基于&lt;a href=&quot;https://github.com/gpakosz/.tmux&quot;&gt;oh-my-tmux&lt;/a&gt;的tmux.conf文件，也欢迎看官拿去用&lt;/p&gt;
+
+&lt;p&gt;nvim目录就是3天努力的成果了，大部分插件都使用了neovim基于lua写的插件，少量目前还没有很好替代品的插件用了vim的插件，最终成果截图：
+&lt;img src=&quot;https://pic1.zhimg.com/v2-09ccc82fdac94a17b78955fe18f7cd48_b.png&quot; alt=&quot;最终成果&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;跟vim相比肉眼可见最大的不同就是出色的代码高亮效果了，跟VSCode这类编辑器的效果可以媲美，之前接触到的大佬的配置对代码高亮这一块都不怎么感冒，但我个人还是对代码高亮的效果有刚需，因为这个之前想要完全迁移到vim开发总是缺点动力，现在可以说neovim把这一块短板补足了。&lt;/p&gt;
+
+&lt;p&gt;nvim-lspinstall这个插件也让LSP(language server protocol，不是老色批)的安装变的简单，但是因为nvim大部分东西都是刚起步，特定语言的支持还不是很成熟，比如我日常使用最多的java，对应的nvim-jdtls（因为jdtls对于LSP的实现不标准，由大佬对nvim的LSP客户端专门又做了一次封装）到现在还差了一些功能，比如查看依赖树，其他语言的LSP倒是基本都安装即可用。&lt;/p&gt;
+
+&lt;p&gt;我这套配置实现的特性做一个总结：&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;LSP支持下的代码自动完成，代码高亮，编辑增强，集成翻译插件&lt;/li&gt;
+  &lt;li&gt;文件树，缓冲区，状态栏美化&lt;/li&gt;
+  &lt;li&gt;基于nvim-telescope的文件/文件内容/tags搜索，与neovim深度集成&lt;/li&gt;
+  &lt;li&gt;优化自带终端操作，并集成rest client插件方便接口测试&lt;/li&gt;
+  &lt;li&gt;基本debug支持，简单数据库管理支持&lt;/li&gt;
+  &lt;li&gt;git增强且易用，基本实现与VSCode集成git一样的效果，lazygit简化git操作重点推荐&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;以上只是列举了我认为最重要的特性，完全的配置请看上面贴的仓库，所有使用的插件在&lt;a href=&quot;https://github.com/HeWenJin/config/blob/main/nvim/lua/plugins/init.lua&quot;&gt;nvim/lua/plugins/init.lua&lt;/a&gt; 里，也不用担心插件多了影响启动速度，基于lua的插件比vimscript快得多&lt;/p&gt;
+
+&lt;p&gt;依赖的CLI工具：&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/kdheepak/lazygit.nvim&quot;&gt;https://github.com/kdheepak/lazygit.nvim&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/BurntSushi/ripgrep&quot;&gt;https://github.com/BurntSushi/ripgrep&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/tmux/tmux&quot;&gt;https://github.com/tmux/tmux&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Arch Linux用户可以用&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;yay&lt;/code&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pacman&lt;/code&gt;安装
+如果想用我这套配置，拉下仓库后设置软链接即可，示例：&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ln -s ~/project/my/config/dotfiles/.tmux.conf.local ~/.tmux.conf.local
+ln -s ~/project/my/config/dotfiles/.zshrc ~/.zshrc
+ln -s ~/project/my/config/nvim ~/.config/nvim
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;neovim插件管理器应该会在第一次进入时自动下载，视网络情况可能需要你懂得的东西，下载好后，执行&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;:PackerInstall&lt;/code&gt;和&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;:PackerCompile&lt;/code&gt;
+参考的是tjdevires neovim大佬的配置：&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/tjdevries/config_manager/tree/master/xdg_config/nvim&quot;&gt;https://github.com/tjdevries/config_manager/tree/master/xdg_config/nvim&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;插件来源：&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/rockerBOO/awesome-neovim&quot;&gt;https://github.com/rockerBOO/awesome-neovim&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/akrawchyk/awesome-vim&quot;&gt;https://github.com/akrawchyk/awesome-vim&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;总的来说除了java的开发体验还缺点东西，大部分语言已经可以获得很好的开发体验了，作为把java当主力语言的开发者，希望接下来自己也能出一份力完善neovim的生态，毕竟生命在于折腾。&lt;/p&gt;</content><author><name></name></author><category term="jekyll" /><category term="update" /><summary type="html">neovim 0.5 于7月2日发布，正式带来treesitter和LSP client的支持，我也在第一时间升级到了 0.5，我的neovim/vim配置之前在Arch的环境下一直用的.vimrc，两者的配置混在一起，而 neovim 0.5 带来的新特性和新插件已经完全不能和vim兼容了，想要尝试新特性的同学，是时候把neovim和vim的配置完全分离开了。</summary></entry></feed>

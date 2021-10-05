@@ -1,3 +1,9 @@
+---
+layout: post
+title:  "Arch下的KVM-win10客户机与宿主机使用samba共享文件的步骤.md"
+date:   2021-10-05 16:18:01 +0800
+categories: jekyll update
+---
 **背景**：Arch Linux下的各种国产必备软件（微信，qq，再加上打工人需要的钉钉，企业微信之流）确实都有大佬打包的deepin-wine版本去用，无奈工作时需要使用的一些功能，语音会议，屏幕共享等要么还是不稳定，要么直接不能用，影响到了办公，所以决定还是用KVM做个win10虚拟机去使用这些软件了，使用过程中宿主机与客户机的剪切板共享可以传输字符，屏幕截图，却传输不了文件。稍微了解了一下用samba共享文件是最通用的解决方案了，这里记录一下配置过程。
 
 参考[Arch Wiki 上的Samba配置说明](https://wiki.archlinux.org/title/Samba_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87))：
