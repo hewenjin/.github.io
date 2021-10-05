@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Arch下的KVM-win10客户机与宿主机使用samba共享文件的步骤.md"
+title:  "Arch下的KVM-win10客户机与宿主机使用samba共享文件的步骤"
 date:   2021-10-05 16:18:01 +0800
 categories: jekyll update
 ---
